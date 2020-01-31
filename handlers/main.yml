@@ -1,0 +1,8 @@
+---
+# handlers file for umask
+- name: restart umask
+  service:
+    name: "{{ umask_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"

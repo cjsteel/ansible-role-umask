@@ -1,0 +1,7 @@
+---
+# vars file for umask
+_umask_packages:
+  default:
+    - umask
+
+umask_packages: "{{ _umask_packages[ansible_os_family] | default(_umask_packages['default']) }}"

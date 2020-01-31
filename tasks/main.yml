@@ -1,0 +1,24 @@
+---
+# tasks file for umask
+- name: install umask
+  package:
+    name: "{{ umask_packages }}"
+    state: present
+  register: umask_install_umask
+  until: umask_install_umask is succeeded
+  retries: 3
+
+- name: configure umask
+  template:
+    src: "{{ umask_config_file }}.j2"
+    dest: "{{ umask_config_directory }}/{{ umask_config_file }}"
+  notify:
+    - restart umask
+
+- name: start and enable umask
+  service:
+    name: "{{ umask_service }}"
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"
