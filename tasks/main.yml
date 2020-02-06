@@ -1,24 +1,19 @@
 ---
 # tasks file for umask
-- name: install umask
-  package:
-    name: "{{ umask_packages }}"
-    state: present
-  register: umask_install_umask
-  until: umask_install_umask is succeeded
-  retries: 3
 
-- name: configure umask
+# May be more approprate for Redhat distributions as they have umask defaults for system users and for regular users
+- name: "template distributions umask startup file"
   template:
-    src: "{{ umask_config_file }}.j2"
-    dest: "{{ umask_config_directory }}/{{ umask_config_file }}"
-  notify:
-    - restart umask
+    backup: yes
+    src: '{{ ansible_distribution }}/{{ ansible_distribution_major_version }}{{ umask_system_config_file_path }}.j2'
+    dest: '{{ umask_system_config_file_path }}'
 
-- name: start and enable umask
-  service:
-    name: "{{ umask_service }}"
-    state: started
-    enabled: yes
-  when:
-    - ansible_virtualization_type != "docker"
+# May be more appropriate for Debian distibutions as they have a global umask by default
+#- name: Replace all instances of umask in the umask systems confiuration file
+#  replace:
+#    regexp: 'umask(\s+.*)'
+#    replace: 'umask {{ umask_default_umask }}' 
+#    dest: '{{ umask_system_config_file_path }}'
+#    mode: 0644
+
+# Other distributions?

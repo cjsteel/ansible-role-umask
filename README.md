@@ -4,7 +4,9 @@ umask
 ## Skeleton - not production ready yet
 #[![Build Status](https://travis-ci.org/csteel/ansible-role-umask.svg?branch=master)](https://travis-ci.org/csteel/ansible-role-umask)
 
-The purpose of this role is to install and configure umask on your system.
+The purpose of this role is to configure umask on targeted systems.
+
+For configuring the system umask it ensures that the targeted umask system configuration file  ensures that /etc/profile.d
 
 [Unit tests](https://travis-ci.org/csteel/ansible-role-umask) are done on every commit and periodically.
 
