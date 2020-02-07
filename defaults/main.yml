@@ -14,9 +14,8 @@
 # There is no One True Answer here : each sysadmin must make up his/her
 # mind.
 
-
 # umask setting for Debian based distributions (all users have same umask?)
-umask_default_umask : '077'  # very strict
+umask_default_umask: '077'  # very strict
 
 # umask settings for Redhat based destributions (system and user umask settings differ)
 umask_system_users_umask: '{{ umask_default_umask }}'   # default 002

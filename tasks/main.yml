@@ -7,13 +7,21 @@
     backup: yes
     src: '{{ ansible_distribution }}/{{ ansible_distribution_major_version }}{{ umask_system_config_file_path }}.j2'
     dest: '{{ umask_system_config_file_path }}'
+  when: ansible_os_family == 'RedHat'
 
 # May be more appropriate for Debian distibutions as they have a global umask by default
-#- name: Replace all instances of umask in the umask systems confiuration file
-#  replace:
-#    regexp: 'umask(\s+.*)'
-#    replace: 'umask {{ umask_default_umask }}' 
-#    dest: '{{ umask_system_config_file_path }}'
-#    mode: 0644
+- name: Replace all instances of UMASK in the umask systems wide configuration file
+  replace:
+    regexp: '^UMASK(\s+.*)'
+    replace: 'UMASK		{{ umask_default_umask }}'
+    dest: '{{ umask_system_config_file_path }}'
+    mode: 0644
+  when: ansible_os_family  == 'Debian'
 
-# Other distributions?
+# Other distribution os families:
+# Alpine
+# Archlinux
+# Debian
+# Gentoo
+# RedHat
+# Suse

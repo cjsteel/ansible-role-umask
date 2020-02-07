@@ -12,15 +12,13 @@ umask_packages: "{{ _umask_packages[ansible_os_family] | default(_umask_packages
 
 _umask_system_config_file_path:
   default: /etc/profile
-  #Alpine:
-  #  - /etc/profile
-  #CentOS-6:
-  #  - /etc/profile
+  # Alpine: /etc/profile
+  # CentOS-6: /etc/profile
   CentOS-7: /etc/profile
-  #Fedora:
-  #  - /etc/profile
-  #openSUSE Leap:
-  #  - /etc/profile
+  CentOS-8: /etc/profile
+  Fedora: /etc/profile
+  # openSUSE Leap: /etc/profile
+  Debian: /etc/login.defs
   Ubuntu: /etc/login.defs
 
 umask_system_config_file_path: "{{ _umask_system_config_file_path[ansible_os_family] | default(_umask_system_config_file_path['default']) }}"
@@ -28,20 +26,11 @@ umask_system_config_file_path: "{{ _umask_system_config_file_path[ansible_os_fam
 # umask user umask defaults set in this file:
 # ~/.bashrc ~/.bash_profile ~/.profile (or any other startup file)
 _umask_user_config_file:
-  default:
-    - .profile
-  #Alpine:
-  #  - .profile
-  #CentOS-6:
-  #  - .profile
-  CentOS-7:
-    - .profile
-  #Fedora:
-  #  - .profile
-  #openSUSE Leap:
-  #  - .profile
-  Ubuntu:
-    - .profile
+  default: .profile
+  # Alpine: .profile
+  # CentOS-6: .profile
+  CentOS-7: .profile
+  # Fedora: .profile
+  # openSUSE Leap: .profile
+  Ubuntu: .profile
 umask_user_config_file: "{{ _umask_user_config_file[ansible_os_family] | default(_umask_user_config_file['default']) }}"
-
-

@@ -2,25 +2,44 @@ umask
 =========
 
 ## Skeleton - not production ready yet
+
+### To do
 #[![Build Status](https://travis-ci.org/csteel/ansible-role-umask.svg?branch=master)](https://travis-ci.org/csteel/ansible-role-umask)
 
-The purpose of this role is to configure umask on targeted systems.
+The purpose of this role is to configure the default umask on targeted systems. Currently the role adjust the system wide umask by templating (in the case of RedHat based systems) `/etc/profile` and by doing a replace in `/etc/login.defs` on Debian based systems.
 
-For configuring the system umask it ensures that the targeted umask system configuration file  ensures that /etc/profile.d
+## To do
 
 [Unit tests](https://travis-ci.org/csteel/ansible-role-umask) are done on every commit and periodically.
 
+## Issues
+
 If you find issues, please register them in [GitHub](https://github.com/csteel/ansible-role-umask/issues)
 
+## Local Molecule testing
+
 To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+
+### Set environment variables for molecule
+
+```shell
+export namespace=robertdebock
+export image=ubuntu
+export tag=latest # rolling
 ```
+
 # Docker test:
+
+```shell
 pip install molecule ara
 molecule test
+```
+
 # Vagrant tests
+
+```shell
 molecule test --scenario-name vagrant
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
 
 Context
 --------
@@ -106,3 +125,7 @@ Author Information
 Christopher Steel
 
 Role created using an ansible-role-skeleton version created by [Robert de Bock](https://robertdebock.nl/) <robert@meinit.nl>
+
+```
+
+```
