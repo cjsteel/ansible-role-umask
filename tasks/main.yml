@@ -9,7 +9,7 @@
     dest: '{{ umask_system_config_file_path }}'
   when: ansible_os_family == 'RedHat'
 
-# May be more appropriate for Debian distibutions as they have a global umask by default
+# May be more appropriate for Debian distibutions as they have a single global umask by default
 - name: Replace all instances of UMASK in the umask systems wide configuration file
   replace:
     regexp: '^UMASK(\s+.*)'

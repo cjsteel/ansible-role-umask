@@ -68,24 +68,24 @@ Dependencies
 Compatibility
 -------------
 
-This role has been tested against the following distributions and Ansible version:
+This role has been tested against the following **bolded** distributions and Ansible version:
 
-|distribution|ansible 2.4|ansible 2.5|ansible 2.6|ansible 2.7|ansible devel|
-|------------|-----------|-----------|-----------|-----------|-------------|
-|alpine-edge*|yes|yes|yes|yes|yes*|
-|alpine-latest|yes|yes|yes|yes|yes*|
-|archlinux|yes|yes|yes|yes|yes*|
-|centos-7|yes|yes|yes|yes|yes*|
-|centos-latest|yes|yes|yes|yes|yes*|
-|debian-latest|yes|yes|yes|yes|yes*|
-|debian-stable|yes|yes|yes|yes|yes*|
-|debian-unstable*|yes|yes|yes|yes|yes*|
-|fedora-latest|yes|yes|yes|yes|yes*|
-|fedora-rawhide*|yes|yes|yes|yes|yes*|
-|opensuse-leap|yes|yes|yes|yes|yes*|
-|ubuntu-artful|yes|yes|yes|yes|yes*|
-|ubuntu-devel*|yes|yes|yes|yes|yes*|
-|ubuntu-latest|yes|yes|yes|yes|yes*|
+|distribution|ansible devel|
+|------------|-------------|
+|alpine-edge*|yes*|
+|alpine-latest|yes*|
+|archlinux|yes*|
+|**centos-7**|yes*|
+|centos-latest|yes*|
+|debian-latest|yes*|
+|debian-stable|yes*|
+|debian-unstable*|yes*|
+|**fedora-latest**|yes*|
+|fedora-rawhide*|yes*|
+|opensuse-leap|yes*|
+|ubuntu-artful|yes*|
+|ubuntu-devel*|yes*|
+|**ubuntu-latest**|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
 
