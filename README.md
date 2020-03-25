@@ -92,7 +92,7 @@ A single star means the build may fail, it's marked as an experimental build.
 Example Playbook
 ----------------
 
-```
+```yaml
 ---
 - name: umask
   hosts: all
@@ -109,7 +109,8 @@ To install this role:
 - Install this role individually using `ansible-galaxy install csteel.umask`
 
 Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/requirements.yml
-```
+
+```yaml
 ---
 - name: robertdebock.bootstrap
 - name: csteel.umask
@@ -125,7 +126,3 @@ Author Information
 Christopher Steel
 
 Role created using an ansible-role-skeleton version created by [Robert de Bock](https://robertdebock.nl/) <robert@meinit.nl>
-
-```
-
-```
