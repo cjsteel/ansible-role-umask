@@ -1,32 +1,13 @@
 ---
 galaxy_info:
-  author: Robert de Bock
+  author: Christopher Steel
   role_name: umask
   description: Install and configure umask on your system.
-  license: Apache-2.0
-  company: none
+  license: MIT
+  company: MCIN
   min_ansible_version: 2.7
 
   platforms:
-    - name: Alpine
-      versions:
-        - all
-    - name: ArchLinux
-      versions:
-        - all
-    - name: Debian
-      versions:
-        - all
-    - name: EL
-      versions:
-        - 7
-        - 8
-    - name: Fedora
-      versions:
-        - all
-    - name: OpenSUSE
-      versions:
-        - all
     - name: Ubuntu
       versions:
         - artful
@@ -34,7 +15,8 @@ galaxy_info:
 
   galaxy_tags:
     - umask
-    - centos
+    - ubuntu
+    - bionic
     - redhat
 
 dependencies: []
