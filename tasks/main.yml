@@ -1,22 +1,23 @@
 ---
 # tasks file for umask
 
-# May be more approprate for Redhat distributions as they have umask defaults for system users and for regular users
-- name: "template distributions umask startup file"
-  template:
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: /etc/login.defs
+    dest: /etc/login.defs_backup
+    owner: root
+    group: root
+    mode: '0644'
     backup: yes
-    src: '{{ ansible_distribution }}/{{ ansible_distribution_major_version }}{{ umask_system_config_file_path }}.j2'
-    dest: '{{ umask_system_config_file_path }}'
-  when: ansible_os_family == 'RedHat'
 
-# May be more appropriate for Debian distibutions as they have a single global umask by default
-- name: Replace all instances of UMASK in the umask systems wide configuration file
-  replace:
-    regexp: '^UMASK(\s+.*)'
-    replace: 'UMASK		{{ umask_default_umask }}'
-    dest: '{{ umask_system_config_file_path }}'
-    mode: 0644
-  when: ansible_os_family  == 'Debian'
+- name: Replace UMASK setting with our own
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: '^UMASK'
+    line: 'UMASK		{{ umask_default_umask }}'
+    owner: root
+    group: root
+    mode: '0644'
 
 # Other distribution os families:
 # Alpine

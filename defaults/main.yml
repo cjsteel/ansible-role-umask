@@ -18,5 +18,5 @@
 umask_default_umask: '077'  # very strict
 
 # umask settings for Redhat based destributions (system and user umask settings differ)
-umask_system_users_umask: '{{ umask_default_umask }}'   # default 002
-umask_regular_users_umask: '{{ umask_default_umask }}'  # default 022
+#umask_system_users_umask: '{{ umask_default_umask }}'   # default 002
+#umask_regular_users_umask: '{{ umask_default_umask }}'  # default 022

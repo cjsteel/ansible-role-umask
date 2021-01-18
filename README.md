@@ -71,22 +71,22 @@ Compatibility
 
 This role has been tested against the following **bolded** distributions and Ansible version:
 
-|distribution|ansible devel|
+|distribution|ansible version|
 |------------|-------------|
-|alpine-edge*|yes*|
-|alpine-latest|yes*|
-|archlinux|yes*|
-|**centos-7**|yes*|
-|centos-latest|yes*|
-|debian-latest|yes*|
-|debian-stable|yes*|
-|debian-unstable*|yes*|
-|**fedora-latest**|yes*|
-|fedora-rawhide*|yes*|
-|opensuse-leap|yes*|
-|ubuntu-artful|yes*|
-|ubuntu-devel*|yes*|
-|**ubuntu-latest**|yes*|
+|alpine-edge||
+|alpine-latest||
+|archlinux|                 |
+|centos-7|                 |
+|centos-latest||
+|debian-latest||
+|debian-stable||
+|debian-unstable||
+|fedora-latest||
+|fedora-rawhide||
+|opensuse-leap||
+|ubuntu-artful||
+|ubuntu-devel||
+|**ubuntu-20.04**|2.10.4|
 
 A single star means the build may fail, it's marked as an experimental build.
 
@@ -126,4 +126,4 @@ Author Information
 ------------------
 Christopher Steel
 
-Role created using an ansible-role-skeleton version created by [Robert de Bock](https://robertdebock.nl/) <robert@meinit.nl>
+Role created using a modified ansible-role-skeleton version created by [Robert de Bock](https://robertdebock.nl/) <robert@meinit.nl>

@@ -14,9 +14,9 @@ _umask_system_config_file_path:
   default: /etc/profile
   # Alpine: /etc/profile
   # CentOS-6: /etc/profile
-  CentOS-7: /etc/profile
-  CentOS-8: /etc/profile
-  Fedora: /etc/profile
+  # CentOS-7: /etc/profile
+  # CentOS-8: /etc/profile
+  # Fedora: /etc/profile
   # openSUSE Leap: /etc/profile
   Debian: /etc/login.defs
   Ubuntu: /etc/login.defs
@@ -29,7 +29,7 @@ _umask_user_config_file:
   default: .profile
   # Alpine: .profile
   # CentOS-6: .profile
-  CentOS-7: .profile
+  # CentOS-7: .profile
   # Fedora: .profile
   # openSUSE Leap: .profile
   Ubuntu: .profile
